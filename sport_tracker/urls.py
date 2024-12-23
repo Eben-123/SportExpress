@@ -10,4 +10,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     # Page that shows all sports.
     path('sports/', views.sports, name='sports'),
+    # Detail page for a single topic.
+    path('sports/<int:sport_id>/', views.sport, name='sport'),
 ]
