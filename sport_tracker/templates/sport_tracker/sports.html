@@ -6,7 +6,9 @@
 
     <ul>
         {% for sport in sports %}
-            <li>{{ sport }}</li>
+            <li>
+                <a href="{% url 'sport_tracker:sport' sport.id %}">{{ sport }}</a>
+            </li>
         {% empty %}
             <li>No sports have been added yet.</li>
         {% endfor %}
