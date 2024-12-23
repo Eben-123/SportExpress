@@ -1,0 +1,15 @@
+{% extends "sport_tracker/base.html" %}
+
+{% block content %}
+
+    <p>Sports</p>
+
+    <ul>
+        {% for sport in sports %}
+            <li>{{ sport }}</li>
+        {% empty %}
+            <li>No sports have been added yet.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
