@@ -14,7 +14,7 @@ def sports(request):
 
 def sport(request, sport_id):
     """Show a single sport and all its entries."""
-    Sport = Sport.objects.get(id=sport_id)
+    sport = Sport.objects.get(id=sport_id)
     entries = sport.entry_set.order_by('-date_added')
     context = {'sport': sport, 'entries': entries}
     return render(request, 'sport_tracker/sport.html', context)
