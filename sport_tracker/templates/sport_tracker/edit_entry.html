@@ -1,0 +1,15 @@
+{% extends "sport_tracker/base.html" %}
+
+{% block content %}
+
+  <p><a href="{% url 'sport_tracker:sport' sport.id %}">{{ sport }}</a></p>
+
+  <p>Edit entry:</p>
+
+  <form action="{% url 'sport_tracker:edit_entry' entry.id %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Save changes</button>
+  </form>
+
+{% endblock content %}
