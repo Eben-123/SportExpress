@@ -13,5 +13,7 @@ Main Motivation
 * **Django-bootstrap4:** For styling 
 * **Render:** For deployment
 
+**Team:**
+Ebenezer E , Jean De Dieu MUTABAZI
 
 
