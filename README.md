@@ -7,3 +7,11 @@ Main Motivation
 * Promote healthy living and good mental health.
 * Foster camaraderie among sports enthusiasts. 
 * Guide our users back through their experiences.
+  
+**Tools:**
+* **Django:** For development 
+* **Django-bootstrap4:** For styling 
+* **Render:** For deployment
+
+
+
