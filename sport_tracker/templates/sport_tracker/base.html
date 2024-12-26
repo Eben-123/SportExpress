@@ -1,6 +1,11 @@
 <p>
     <a href="{% url 'sport_tracker:index' %}">Sport Express</a> -
     <a href="{% url 'sport_tracker:sports' %}">Sports</a>
+    {% if user.is_authenticated %}
+      Hello, {{ user.username }}.
+    {% else %}
+      <a href="{% url 'users:login' %}">Log in</a>
+    {% endif %}  
 </p>
 
 {% block content %}{% endblock content %}
