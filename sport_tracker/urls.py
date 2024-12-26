@@ -16,4 +16,6 @@ urlpatterns = [
     path('new_sport/', views.new_sport, name='new_sport'),
     # Page for adding a new entry
     path('new_entry/<int:sport_id>', views.new_entry, name='new_entry'),
+    # Page for editing an entry.
+    path('edit_entry/<int:entry_id>/', views.edit_entry, name='edit_entry'),
 ]

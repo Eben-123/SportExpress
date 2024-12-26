@@ -4,6 +4,9 @@
     <p>Sport: {{ sport }}</p>
 
     <p>Entries:</p>
+    <p>
+      <a href="{% url 'sport_tracker:new_entry' sport.id %}">Add new entry</a>
+    </p>
     <ul>
       {% for entry in entries %}
         <li>
