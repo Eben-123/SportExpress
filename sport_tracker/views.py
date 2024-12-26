@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from .models import Sport
+from .models import Sport, Entry
 from .forms import SportForm, EntryForm
 
 def index(request):
@@ -59,7 +59,7 @@ def new_entry(request, sport_id):
 def edit_entry(request, entry_id):
     """Edit and existing entry."""
     entry = Entry.objects.get(id=entry_id)
-    topic = entry.topic
+    sport = entry.sport
 
     if request.method != 'POST':
         # Initial request; pre-fill form with the current entry.
@@ -72,4 +72,4 @@ def edit_entry(request, entry_id):
             return redirect('sport_tracker:sport', sport_id=sport.id)
     
     context = {'entry': entry, 'sport': sport, 'form': form}
-    return render(request, 'sport_tracker/edit_entry', context)
+    return render(request, 'sport_tracker/edit_entry.html', context)
