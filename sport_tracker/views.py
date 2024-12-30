@@ -15,6 +15,7 @@ def sports(request):
     context = {'sports': sports}
     return render(request, 'sport_tracker/sports.html', context)
 
+@login_required
 def sport(request, sport_id):
     """Show a single sport and all its entries."""
     sport = Sport.objects.get(id=sport_id)
@@ -22,6 +23,7 @@ def sport(request, sport_id):
     context = {'sport': sport, 'entries': entries}
     return render(request, 'sport_tracker/sport.html', context)
 
+@login_required
 def new_sport(request):
     """Add a new sport."""
     if request.method != 'POST':
@@ -38,6 +40,7 @@ def new_sport(request):
     context = {'form': form}
     return render(request, 'sport_tracker/new_sport.html', context)
 
+@login_required
 def new_entry(request, sport_id):
     """Add a new entry for a particular sport."""
     sport = Sport.objects.get(id=sport_id)
@@ -58,6 +61,7 @@ def new_entry(request, sport_id):
     context = {'sport': sport, 'form': form}
     return render(request, 'sport_tracker/new_entry.html', context)
 
+@login_required
 def edit_entry(request, entry_id):
     """Edit and existing entry."""
     entry = Entry.objects.get(id=entry_id)
