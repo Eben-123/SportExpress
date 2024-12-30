@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 
 from .models import Sport, Entry
 from .forms import SportForm, EntryForm
@@ -7,6 +8,7 @@ def index(request):
     """The home page for SportExpress."""
     return render(request, 'sport_tracker/index.html')
 
+@login_required
 def sports(request):
     """Show all sports."""
     sports = Sport.objects.order_by('date_added')
