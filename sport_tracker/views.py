@@ -11,7 +11,7 @@ def index(request):
 @login_required
 def sports(request):
     """Show all sports."""
-    sports = Sport.objects.order_by('date_added')
+    sports = Sport.objects.filter(owner=request.user).order_by('date_added')
     context = {'sports': sports}
     return render(request, 'sport_tracker/sports.html', context)
 
