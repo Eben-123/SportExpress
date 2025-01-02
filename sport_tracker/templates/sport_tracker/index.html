@@ -1,6 +1,15 @@
 {% extends "sport_tracker/base.html" %}
 
-{% block content %}
-    <p>Sport Express helps to bridge the gap between sports enthusiasts, reflect and rewind to your wonderful moments.</p>
+{% block page_header %}
+  <div class="jumbotron">
+    <h1 class="display-3">Rewind back through your memories.</h1>
 
-{% endblock content %}
+    <p class="lead">Make your own Sport Express, and keep a list of the 
+        sports you enjoy. Whenever you learn something new about the sport,
+        make an entry summarizing what you've enjoyed to share in the future.
+    </p>
+
+    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+        role="button">Register &raquo;</a>
+  </div>
+{% endblock page_header %}
