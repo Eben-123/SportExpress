@@ -1,7 +1,7 @@
 {% extends "sport_tracker/base.html" %}
 
 {% block content %}
-  <p>Add a new sport:</p>
+  <p>Add a new sport comment:</p>
 
   <form action="{% url 'sport_tracker:new_sport' %}" method='post'>
     {% csrf_token %}
