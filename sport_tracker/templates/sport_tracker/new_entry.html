@@ -8,7 +8,7 @@
   <form action="{% url 'sport_tracker:new_entry' sport.id %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
-    <button name='submit'>Add sport entry</button>
+    <button name='submit'>Add sports entry</button>
   </form>
 
 {% endblock content %}
