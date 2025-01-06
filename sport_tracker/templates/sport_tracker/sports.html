@@ -1,19 +1,21 @@
 {% extends "sport_tracker/base.html" %}
 
+{% block page_header %}
+    <h1>Sports</h1>
+{% endblock page_header %}
+
 {% block content %}
-
-    <p>Sports</p>
-
     <ul>
         {% for sport in sports %}
-            <li>
+            <li><h3>
                 <a href="{% url 'sport_tracker:sport' sport.id %}">{{ sport }}</a>
-            </li>
+
+            </h3></li>
         {% empty %}
-            <li>No sports have been added yet.</li>
+            <li><h3>No sports have been added yet.</h3></li>
         {% endfor %}
     </ul>
 
-    <a href="{% url 'sport_tracker:new_sport' %}">Add a new sport</a>
+    <h3><a href="{% url 'sport_tracker:new_sport' %}">Add a new sport</a></h3>
 
 {% endblock content %}
