@@ -9,6 +9,7 @@
     <a href="{% url 'sport_tracker:new_entry' sport.id %}">Add new entry</a>
   </p>
 
+<<<<<<< HEAD
   {% for entry in entries %}
     <div class="card mb-3">
       <h4 class="card-header">
@@ -25,3 +26,26 @@
   {% endfor %}
 
 {% endblock content %}
+=======
+    <p>Entries:</p>
+    <p>
+      <a href="{% url 'sport_tracker:new_entry' sport.id %}">Add a new sport entry</a>
+    </p>
+    <ul>
+      {% for entry in entries %}
+        <li>
+            <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
+            <p>{{ entry.text|linebreaks }}</p>
+            <p>
+              <a href="{% url 'sport_tracker:edit_entry' entry.id %}">
+                Edit entry
+              </a>
+            </p>
+        </li>
+      {% empty %}
+        <li>There are no entries for this sport yet.</li>
+      {% endfor %}
+    </ul>
+
+    {% endblock content %}
+>>>>>>> e57cf7bdf571ea116a1eb2c1979a0f37a5811290

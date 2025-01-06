@@ -4,11 +4,11 @@
 
   <p><a href="{% url 'sport_tracker:sport' sport.id %}">{{ sport }}</a></p>
 
-  <p>Add a new entry:</p>
+  <p>Add a new sport entry:</p>
   <form action="{% url 'sport_tracker:new_entry' sport.id %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
-    <button name='submit'>Add entry</button>
+    <button name='submit'>Add sports entry</button>
   </form>
 
 {% endblock content %}

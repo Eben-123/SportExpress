@@ -1,6 +1,8 @@
 # SportExpress
 SportExpress is a dynamic website designed to bridge the gap between sports enthusiasts. The platform offers a user friendly experience, allowing users to enter sports games commentaries,  post links, texts, images, questions, and videos of sports interests. 
-**Motivation**:
+
+**Motivation:**
+
 Main Motivation
 * Help our users build  their sports  interests easily.
 * Reinforce the culture of networking.
