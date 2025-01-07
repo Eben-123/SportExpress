@@ -1,13 +1,30 @@
 {% extends "sport_tracker/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+  <h2 class="text-center mb-4">Create Your Account</h2>
+{% endblock page_header %}
 
 {% block content %}
-
-  <form method="post" action="{% url 'users:register' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-
-    <button name="submit">Register</button>
-    <input type="hidden" name="next" value="{% url 'sport_tracker:index' %}" />
-  </form>
-
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <form method="post" action="{% url 'users:register' %}" class="form">
+              {% csrf_token %}
+              {% bootstrap_form form %}
+              
+              <div class="form-group text-center">
+                <button name="submit" class="btn btn-success btn-lg btn-block mt-3">Register</button>
+              </div>
+              
+              <input type="hidden" name="next" value="{% url 'sport_tracker:index' %}" />
+            </form>
+          </div>
+        </div>
+        <p class="text-center mt-3">Already have an account? <a href="{% url 'users:login' %}">Log in here</a></p>
+      </div>
+    </div>
+  </div>
 {% endblock content %}

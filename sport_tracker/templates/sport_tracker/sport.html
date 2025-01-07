@@ -1,27 +1,29 @@
 {% extends 'sport_tracker/base.html' %}
 
 {% block page_header %}
-  <h3>{{ sport }}</h3>
+  <div class="container mt-4">
+    <h3 class="text-center font-weight-bold">{{ sport }}</h3>
+  </div>
 {% endblock page_header %}
 
 {% block content %}
-  <p>
-    <a href="{% url 'sport_tracker:new_entry' sport.id %}">Add new entry</a>
-  </p>
+  <div class="container mt-3">
+    <p class="text-center">
+      <a href="{% url 'sport_tracker:new_entry' sport.id %}" class="btn btn-info text-white">Add New Entry</a>
+    </p>
 
-  {% for entry in entries %}
-    <div class="card mb-3">
-      <h4 class="card-header">
-        {{ entry.date_added|date:'M d, Y H:i' }}
-        <small><a href="{% url 'sport_tracker:edit_entry' entry.id %}">edit entry</a></small>
-      </h4>
-      <div class="card-body">
-        {{ entry.text|linebreaks }}
+    {% for entry in entries %}
+      <div class="card mb-3 shadow-lg">
+        <h5 class="card-header bg-info text-white d-flex justify-content-between">
+          <span>{{ entry.date_added|date:'M d, Y H:i' }}</span>
+          <a href="{% url 'sport_tracker:edit_entry' entry.id %}" class="btn btn-sm btn-light">Edit Entry</a>
+        </h5>
+        <div class="card-body">
+          <p class="card-text">{{ entry.text|linebreaks }}</p>
+        </div>
       </div>
-    </div>
-
-  {% empty %}
-    <p>There are no entries for this sport yet.</p>
-  {% endfor %}
-
+    {% empty %}
+      <p class="text-center font-italic">There are no entries for this sport yet.</p>
+    {% endfor %}
+  </div>
 {% endblock content %}

@@ -1,15 +1,23 @@
 {% extends "sport_tracker/base.html" %}
 
-{% block page_header %}
-  <div class="jumbotron">
-    <h1 class="display-3">Rewind back through your memories.</h1>
+{% block content %}
+  <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="text-center">
+      <!-- Image with better alignment and spacing -->
+      <img src="https://i.ibb.co/4sbx6pH/SPORTEXPRESS-2.png" class="rounded-2 img-fluid mb-4" alt="Sport-Express" style="max-width: 250px;">
 
-    <p class="lead">Make your own Sport Express, and keep a list of the 
-        sports you enjoy. Whenever you learn something new about the sport,
-        make an entry summarizing what you've enjoyed to share in the future.
-    </p>
+      <!-- Main heading -->
+      <h1 class="display-4 fw-bold text-sm-start">Rewind back</h1>
 
-    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
-        role="button">Register &raquo;</a>
+      <!-- Lead text with reduced width for better readability -->
+      <p class="lead text-sm-start mt-3" style="max-width: 600px;">
+        Make your own Sport Express, and keep a list of the 
+    sports you enjoy. Whenever you learn something new about the sport,
+    make an entry summarizing what you've enjoyed to share in the future.
+      </p>
+
+      <!-- Register button -->
+      <a href="{% url 'users:register' %}" class="btn btn-success btn-lg mt-4" role="button">Register &raquo;</a>
+    </div>
   </div>
-{% endblock page_header %}
+{% endblock content %}

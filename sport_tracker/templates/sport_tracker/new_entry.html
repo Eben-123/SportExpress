@@ -1,14 +1,22 @@
 {% extends "sport_tracker/base.html" %}
 
 {% block content %}
+  <div class="container mt-4">
+    <p>
+      <a href="{% url 'sport_tracker:sport' sport.id %}" class="btn btn-outline-info mb-3">
+        Back to <span  class="font-weight-bold">"{{ sport }}"</span>
+      </a>
+    </p>
 
-  <p><a href="{% url 'sport_tracker:sport' sport.id %}">{{ sport }}</a></p>
+    <h4 class="text-center font-weight-bold">Add a New Entry</h4>
 
-  <p>Add a new sport entry:</p>
-  <form action="{% url 'sport_tracker:new_entry' sport.id %}" method='post'>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button name='submit'>Add sports entry</button>
-  </form>
-
+    <form action="{% url 'sport_tracker:new_entry' sport.id %}" method="post" class="mt-3 p-4 shadow-lg bg-light rounded">
+      {% csrf_token %}
+      <div class="form-group">
+        {{ form.as_p }}
+      </div>
+      
+      <button type="submit" class="btn btn-info btn-block text-white mt-2">Add Entry</button>
+    </form>
+  </div>
 {% endblock content %}
