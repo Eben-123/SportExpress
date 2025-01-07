@@ -41,7 +41,7 @@ def new_sport(request):
             new_sport = form.save(commit=False)
             new_sport.owner = request.user
             new_sport.save()
-            return redirect('sport_tracker:topics')
+            return redirect('sport_tracker:sports')
     
     # Display a blank or invalid form.
     context = {'form': form}
