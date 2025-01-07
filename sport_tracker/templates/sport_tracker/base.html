@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% load bootstrap4 %}
 
 <!DOCTYPE html>
@@ -62,23 +61,3 @@
   </main>
 </body>
 </html>
-=======
-<p>
-    <a href="{% url 'sport_tracker:index' %}">SportExpress</a> -
-    <a href="{% url 'sport_tracker:sports' %}">Sports</a>
-    {% if user.is_authenticated %}
-      Hello, {{ user.username }}.
-      <form method="post" action="{% url 'users:logout' %}" class="d-inline">
-        {% csrf_token %}
-          
-        <button class="btn btn-outline-light" type="submit">Log out</button>
-      </form>
-    {% else %}
-
-      <a href="{% url 'users:register' %}">Register</a> -
-      <a href="{% url 'users:login' %}">Log in</a>
-    {% endif %}  
-</p>
-
-{% block content %}{% endblock content %}
->>>>>>> e57cf7bdf571ea116a1eb2c1979a0f37a5811290
